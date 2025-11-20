@@ -33,9 +33,10 @@ public class PracticeProblemTest {
         } catch (InvocationTargetException e) {
             Throwable cause = e.getCause();
             if (cause instanceof IllegalArgumentException) {
-                assertTrue("Exception message should mention positive or negative", 
+                assertTrue( 
                           cause.getMessage().toLowerCase().contains("positive") || 
-                          cause.getMessage().toLowerCase().contains("negative"));
+                          cause.getMessage().toLowerCase().contains("negative"),
+                "Exception message should mention positive or negative");
             } else {
                 fail("Wrong exception type thrown. Expected IllegalArgumentException, got: " + 
                      (cause != null ? cause.getClass().getName() : "null"));
